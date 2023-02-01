@@ -21,5 +21,11 @@ Route::prefix('admin')->group(function () {
 
         //route dashboard
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard.index');
+
+        //route resource categories
+        Route::resource('/category', CategoryController::class, ['as' => 'admin']);
+
+        //route resource campaign
+        Route::resource('/campaign', CampaignController::class, ['as' => 'admin']);
     });
 });
