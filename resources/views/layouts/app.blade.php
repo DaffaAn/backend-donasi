@@ -64,50 +64,42 @@
                     <span class="mx-3">Kategori</span>
                  </a>
 
-                <a class="flex items-center mt-4 py-2 px-6 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100 {{ Request::is('admin/campaign*') ? ' bg-gray-700 bg-opacity-25 text-gray-100' :  'text-gray-500' }}"
-                    href="#">
+                 <a class="flex items-center mt-4 py-2 px-6 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100 {{ Request::is('admin/campaign*') ? ' bg-gray-700 bg-opacity-25 text-gray-100' :  'text-gray-500' }}" href="{{ route('admin.campaign.index') }}">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
+                                       xmlns="http://www.w3.org/2000/svg">
+                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                           d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9">
+                       </path>
+                   </svg>
+                  <span class="mx-3">Campaigns</span>
+               </a>
+
+                <a class="flex items-center mt-4 py-2 px-6 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100 {{ Request::is('admin/donatur*') ? ' bg-gray-700 bg-opacity-25 text-gray-100' :  'text-gray-500' }}" href="{{ route('admin.donatur.index') }}">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                       xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9">
+                                            d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
                         </path>
                     </svg>
-
-                    <span class="mx-3">Campaigns</span>
-                </a>
-
-                <a class="flex items-center mt-4 py-2 px-6 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100 {{ Request::is('admin/donatur*') ? ' bg-gray-700 bg-opacity-25 text-gray-100' :  'text-gray-500' }}"
-                    href="#">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
-                        </path>
-                    </svg>
-
                     <span class="mx-3">Donaturs</span>
                 </a>
 
-                <a class="flex items-center mt-4 py-2 px-6 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100 {{ Request::is('admin/donation*') ? ' bg-gray-700 bg-opacity-25 text-gray-100' :  'text-gray-500' }}"
-                    href="#">
+                <a class="flex items-center mt-4 py-2 px-6 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100 {{ Request::is('admin/donation*') ? ' bg-gray-700 bg-opacity-25 text-gray-100' :  'text-gray-500' }}" href="{{ route('admin.donation.index') }}">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                    </svg>
-
+                                        xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                      </svg>
                     <span class="mx-3">Donation</span>
                 </a>
 
-                <a class="flex items-center mt-4 py-2 px-6 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100 {{ Request::is('admin/profile*') ? ' bg-gray-700 bg-opacity-25 text-gray-100' :  'text-gray-500' }}"
-                    href="#">
+                <a class="flex items-center mt-4 py-2 px-6 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100 {{ Request::is('admin/profile*') ? ' bg-gray-700 bg-opacity-25 text-gray-100' :  'text-gray-500' }}" href="{{ route('admin.profile.index') }}">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z">
-                        </path>
+                                        xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z">
+                      </path>
                     </svg>
-
                     <span class="mx-3">Profil Saya</span>
                 </a>
 

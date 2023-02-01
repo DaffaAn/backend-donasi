@@ -27,5 +27,15 @@ Route::prefix('admin')->group(function () {
 
         //route resource campaign
         Route::resource('/campaign', CampaignController::class, ['as' => 'admin']);
+
+        //route donatur
+        Route::get('/donatur', [DonaturController::class, 'index'])->name('admin.donatur.index');
+
+        //route donation
+        Route::get('/donation', [DonationController::class, 'index'])->name('admin.donation.index');
+        Route::get('/donation/filter', [DonationController::class, 'filter'])->name('admin.donation.firter');
+
+        //route profile
+        Route::get('/profile', [ProfileController::class, 'index'])->name('admin.profile.index');
     });
 });
