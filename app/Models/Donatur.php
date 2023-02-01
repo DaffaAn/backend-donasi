@@ -3,12 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;    // <-- import Auth Laravel
+use Laravel\Passport\HasApiTokens;
 
-class Donatur extends Model
+class Donatur extends Authenticatable    // <-- set ke Authenticatable
 {
-    use HasFactory;
+
+    use HasFactory, HasApiTokens;
 
     /**
      * fillable
@@ -47,7 +49,7 @@ class Donatur extends Model
     protected function avatar(): Attribute
     {
         return Attribute::make(
-            get: fn ($value) => $value != '' ? asset('/storage/donaturs/' . $value) : 'https://ui-avatars.com/api/?name=' . str_replace(' ', '+', $this->name) . '&background=4e73df&color=ffffff&size=100',
+            get: fn ($value) => asset('/storage/donaturs/' . $value) ?? 'https://ui-avatars.com/api/?name=' . str_replace(' ', '+', $value) . '&background=4e73df&color=ffffff&size=100',
         );
     }
 }
