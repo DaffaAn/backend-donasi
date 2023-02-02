@@ -11,7 +11,8 @@
         "laravel/framework": "^9.2",
         "laravel/passport": "10.4.1",
         "laravel/sanctum": "^2.14.1",
-        "laravel/tinker": "^2.7"
+        "laravel/tinker": "^2.7",
+        "midtrans/midtrans-php": "2.3.2"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
