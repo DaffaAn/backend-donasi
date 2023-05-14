@@ -30,19 +30,19 @@
                 <table class="min-w-full table-auto">
                     <thead class="justify-between">
                         <tr class="bg-gray-600 w-full">
-                            <th class="px-16 py-2" style="width: 40%">
+                            <th class="px-10 py-2" style="width: 40%">
                                 <span class="text-white">JUDUL CAMPAIGN</span>
                             </th>
-                            <th class="px-16 py-2 text-left">
+                            <th class="px-8 py-2 text-left">
                                 <span class="text-white">KATEGORI</span>
                             </th>
-                            <th class="px-16 py-2 text-left">
+                            <th class="px-10 py-2 text-left">
                                 <span class="text-white">TARGET DONASI</span>
                             </th>
-                            <th class="px-16 py-2 text-left">
+                            <th class="px-10 py-2 text-left">
                                 <span class="text-white">TANGGAL BERAKHIR</span>
                             </th>
-                            <th class="px-16 py-2">
+                            <th class="px-10 py-2">
                                 <span class="text-white">AKSI</span>
                             </th>
                         </tr>
@@ -54,13 +54,13 @@
                                 <td class="px-5 py-2">
                                     {{ $campaign->title }}
                                 </td>
-                                <td class="px-16 py-2">
+                                <td class="px-8 py-2">
                                     {{ $campaign->category->name }}
                                 </td>
-                                <td class="px-16 py-2">
+                                <td class="px-10 py-2">
                                     {{ moneyFormat($campaign->target_donation) }}
                                 </td>
-                                <td class="px-16 py-2">
+                                <td class="px-10 py-2">
                                     {{ $campaign->max_date }}
                                 </td>
                                 <td class="px-10 py-2 text-center">
