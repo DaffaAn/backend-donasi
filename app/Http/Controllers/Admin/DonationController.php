@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Donatur;
 use App\Models\Donation;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -15,7 +16,10 @@ class DonationController extends Controller
      */
     public function index()
     {
-        return view('admin.donation.index');
+        $donaturs   = Donatur::all();
+        return view('admin.donation.index', [
+            'donaturs' => $donaturs
+        ]);
     }
 
     /**
@@ -34,16 +38,26 @@ class DonationController extends Controller
         $date_from  = $request->date_from;
         $date_to    = $request->date_to;
         $donatur    = $request->donatur;
+        $donaturs   = Donatur::all();
 
-        //get data donation by range date
-        $donations = Donation::where('status', 'success')->whereDate('created_at', '>=', $request->date_from)->whereDate('created_at', '<=', $request->date_to)->get();
+        if ($request->donatur_id == "none") {
+            $donations = Donation::where('status', 'success')->whereDate('created_at', '>=', $request->date_from)->whereDate('created_at', '<=', $request->date_to)->get();
+            $total = Donation::where('status', 'success')->whereDate('created_at', '>=', $request->date_from)->whereDate('created_at', '<=', $request->date_to)->sum('amount');
 
-        //get data by donatur
-        $donaturs = Donation::where('status', 'success')->whereDate('created_at', '>=', $request->date_from)->whereDate('created_at', '<=', $request->date_to)->get();
+            return view('admin.donation.index', compact('donations', 'total', 'donaturs'));
+        } else {
 
-        //get total donation by range date    
-        $total = Donation::where('status', 'success')->whereDate('created_at', '>=', $request->date_from)->whereDate('created_at', '<=', $request->date_to)->sum('amount');
 
-        return view('admin.donation.index', compact('donations', 'total'));
+            //get data donation by range date
+            $donations = Donation::where('status', 'success')->where('donatur_id', $request->donatur_id)->whereDate('created_at', '>=', $request->date_from)->whereDate('created_at', '<=', $request->date_to)->get();
+
+            //get data by donatur
+            //$donaturs = Donatur::where('status', 'success')->whereDate('created_at', '>=', $request->date_from)->whereDate('created_at', '<=', $request->date_to)->get();
+
+            //get total donation by range date    
+            $total = Donation::where('status', 'success')->where('donatur_id', $request->donatur_id)->whereDate('created_at', '>=', $request->date_from)->whereDate('created_at', '<=', $request->date_to)->sum('amount');
+
+            return view('admin.donation.index', compact('donations', 'total', 'donaturs'));
+        }
     }
 }

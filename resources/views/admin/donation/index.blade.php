@@ -35,10 +35,16 @@
                 
                 <div class="flex-auto">
                     <label class="text-gray-700" for="name">Nama Donatur</label>
-                    <input class="form-input w-full mt-2 rounded-md bg-white p-3 shadow-md" type="radio" name="donatur_id"
+                    <select class="form-input w-full mt-2 rounded-md bg-white p-3 shadow-md" type="drop" name="donatur_id">
+                        <option selected value="none">Select Donatur</option>
+
                     @foreach ($donaturs as $donatur)
-                    <option>value="{{ $donatur->id }}">{{ $donatur->name }}</option>
+                    <option value="{{ $donatur->id }}">{{ $donatur->name }}</option>
+           
                 @endforeach
+
+            </select> 
+
                     @error('date_to')
                         <div class="w-full bg-red-200 shadow-sm rounded-md overflow-hidden mt-2">
                             <div class="px-4 py-2">
